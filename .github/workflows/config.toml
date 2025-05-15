@@ -1,0 +1,36 @@
+[permissions]
+# Default fallback (no global users/teams allowed unless env-specific permissions exist)
+users = []
+teams = []
+
+[environment_targets.dev]
+branches = ["feature/*", "bugfix/*", "develop"]
+teams = ["probot-developer"]
+
+[environment_targets.stage]
+branches = ["release/*"]
+teams = ["probot-admin"]
+
+[environment_targets.production]
+branches = ["main"]
+teams = ["probot-admin"]
+
+# Mark production environments for additional safety handling (like confirmations)
+production_environments = ["production"]
+
+# Branch to use when comparing for drift detection (optional)
+stable_branch = "main"
+
+# Allow users to bypass required checks with `--skip-ci`
+skip_ci = true
+
+# Required checks posted via Probot (simulate GitHub Actions job names)
+checks = [
+  "Deploy Workflow / ci/build",
+  "Deploy Workflow / ci/tests"
+]
+
+# Checks that are optional or can be ignored (example only)
+ignored_checks = [
+  "Deploy Workflow / sonar"
+]
