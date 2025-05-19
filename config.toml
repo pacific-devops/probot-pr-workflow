@@ -1,0 +1,34 @@
+[permissions]
+# Global allowed users/teams (fallback/default access)
+users = ["core-engineer"]
+teams = ["probot-admin"]
+
+[environment_targets.dev]
+branches = ["feature/*", "bugfix/*"]
+users = ["Pacificdubey", "Pardomain"]
+teams = ["probot-admin","probot-developer"]
+
+[environment_targets.stage]
+branches = ["release/*"]
+users = ["Pacificdubey"]
+teams = ["probot-admin"]
+
+[environment_targets.production]
+branches = ["main"]
+users = ["Pacificdubey"]
+teams = ["probot-admin"]
+
+production_environments = ["production", "prod"]
+
+stable_branch = "main"
+
+skip_ci = true
+
+checks = [
+  "ci/build",
+  "ci/tests"
+]
+
+ignored_checks = [
+  "ci/sonar"
+]
