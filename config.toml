@@ -1,6 +1,6 @@
 [permissions]
 # Global allowed users/teams (fallback/default access)
-users = ["core-engineer"]
+users = ["Pacificdubey"]
 teams = ["probot-admin"]
 
 [environment_targets.dev]
