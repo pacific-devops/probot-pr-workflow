@@ -13,19 +13,10 @@ branches = ["release/*"]
 users = ["Pacificdubey"]
 teams = ["probot-admin"]
 
-[environment_targets.production]
-branches = ["main"]
-users = ["Pacificdubey"]
-teams = ["probot-admin"]
-
-production_environments = ["production", "prod"]
-
-stable_branch = "main"
-
 skip_ci = false
 
 checks = [
-  "int",
+  "lint",
   "scan"
 ]
 
