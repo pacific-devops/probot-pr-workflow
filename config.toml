@@ -22,13 +22,13 @@ production_environments = ["production", "prod"]
 
 stable_branch = "main"
 
-skip_ci = true
+skip_ci = false
 
 checks = [
-  "ci/build",
-  "ci/tests"
+  "int",
+  "scan"
 ]
 
 ignored_checks = [
-  "ci/sonar"
+  "scan"
 ]
