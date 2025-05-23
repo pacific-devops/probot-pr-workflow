@@ -13,6 +13,9 @@ branches = ["release/*"]
 users = ["Pacificdubey"]
 teams = ["probot-admin"]
 
+
+# ✅ Now a new section starts implicitly
+
 skip_ci = false
 
 checks = [
