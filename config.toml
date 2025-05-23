@@ -17,7 +17,7 @@ skip_ci = false
 
 checks = [
   "CI Scan / lint",
-  ""CI Scan / lint""
+  "CI Scan / sonar"
 ]
 
 ignored_checks = [
