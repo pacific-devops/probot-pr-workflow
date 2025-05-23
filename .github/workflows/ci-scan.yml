@@ -8,7 +8,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "✅ Lint successful"
+      - run: |
+          echo "✅ Lint successful"
+          exit 1
+            
 
   scan:
     runs-on: ubuntu-latest
