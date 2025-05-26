@@ -10,5 +10,5 @@ teams = ["probot-admin"]
 
 [checks]
 skip_ci = false
-required = ["CI Scan / lint", "CI Scan / sonar"]
+required = ["lint", "sonar"]
 ignored = ["scan"]
