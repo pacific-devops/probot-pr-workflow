@@ -10,6 +10,7 @@ jobs:
     steps:
       - run: |
           echo "✅ Lint successful"
+          exit 1
             
 
   scan:
