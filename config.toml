@@ -4,7 +4,7 @@ users = ["Pacificdubey", "Pardomain"]
 teams = ["probot-admin","probot-developer"]
 
 [environment_targets.stage]
-branches = ["release/*"]
+branches = ["feature/*"]
 users = ["Pacificdubey"]
 teams = ["probot-admin"]
 
