@@ -1,8 +1,3 @@
-[permissions]
-# Global allowed users/teams (fallback/default access)
-users = ["Pacificdubey"]
-teams = ["probot-admin"]
-
 [environment_targets.dev]
 branches = ["feature/*", "bugfix/*"]
 users = ["Pacificdubey", "Pardomain"]
@@ -13,16 +8,7 @@ branches = ["release/*"]
 users = ["Pacificdubey"]
 teams = ["probot-admin"]
 
-
-# ✅ Now a new section starts implicitly
-
+[checks]
 skip_ci = false
-
-checks = [
-  "CI Scan / lint",
-  "CI Scan / sonar"
-]
-
-ignored_checks = [
-  "scan"
-]
+required = ["CI Scan / lint", "CI Scan / sonar"]
+ignored = ["scan"]
