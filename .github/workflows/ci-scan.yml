@@ -10,10 +10,12 @@ jobs:
     steps:
       - run: |
           echo "✅ Lint successful"
-          exit 1
+
             
 
   scan:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "✅ Scan successful"
+      - run: |
+         echo "✅ Scan successful"
+         exit 1
