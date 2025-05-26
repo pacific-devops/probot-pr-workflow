@@ -56,3 +56,4 @@ jobs:
           echo "Deploying application for PR #${{ inputs.pr_number }} to ${{ inputs.environment }}..."
           sleep 10
           echo "Deployment successful."
+
