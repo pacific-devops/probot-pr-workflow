@@ -1,5 +1,5 @@
 name: Deploy Workflow
- 
+
 on:
   workflow_dispatch:
     inputs:
@@ -11,17 +11,48 @@ on:
         description: "Author of the deploy comment"
         required: true
         type: string
+      environment:
+        description: "Target deployment environment (e.g. staging, production)"
+        required: true
+        type: string
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-      - name: Display Inputs
+
+      - name: Show Inputs
         run: |
-          echo "Triggered by PR #${{ github.event.inputs.pr_number }}"
-          echo "Comment Author: ${{ github.event.inputs.comment_author }}"
-      - name: Deploy Application
+          echo "Triggered by PR #${{ inputs.pr_number }}"
+          echo "Comment Author: ${{ inputs.comment_author }}"
+          echo "Environment: ${{ inputs.environment }}"
+
+      - name: Display Environment Variables (from GitHub Environment)
         run: |
-          echo "Deploying application for PR #${{ github.event.inputs.pr_number }}..."
- 
+          echo "ENV_VAR_1: $ENV_VAR_1"
+          echo "ENV_VAR_2: $ENV_VAR_2"
+        env:
+          ENV_VAR_1: ${{ vars.ENV_VAR_1 }}
+          ENV_VAR_2: ${{ vars.ENV_VAR_2 }}
+
+      - name: Simulate Build Step
+        run: |
+          echo "Running build process..."
+          sleep 10
+          echo "Build completed."
+
+      - name: Simulate Unit Tests
+        run: |
+          echo "Running tests..."
+          sleep 15
+          echo "All tests passed."
+
+      - name: Simulate Deployment
+        run: |
+          echo "Deploying application for PR #${{ inputs.pr_number }} to ${{ inputs.environment }}..."
+          sleep 10
+          echo "Deployment successful."
